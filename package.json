@@ -28,6 +28,9 @@
       "git add"
     ]
   },
+  "commitlint": {
+    "extends": [ "@commitlint/config-conventional" ]
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
@@ -50,6 +53,9 @@
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
     "@babel/core": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/prompt": "^8.1.0",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addon-notes": "^5.1.11",
