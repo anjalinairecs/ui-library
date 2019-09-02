@@ -3,9 +3,15 @@ import { UiComponent } from './ui.component';
 import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [UiComponent, ButtonComponent],
+  declarations: [
+    UiComponent,
+    ButtonComponent
+  ],
   imports: [
   ],
-  exports: [UiComponent]
+  exports: [
+    UiComponent,
+    ButtonComponent
+  ]
 })
 export class UiModule { }

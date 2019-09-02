@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:library-ui": "ng build ui && cd dist && cd ui && npm pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

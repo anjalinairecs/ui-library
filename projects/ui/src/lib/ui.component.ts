@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
+
 export class UiComponent implements OnInit {
 
   constructor() { }
