@@ -6,14 +6,16 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:lib-coverage": "ng test ui --code-coverage --watch=false",
     "lint": "ng lint",
-    "build:ui-library": "run-s build:ui pack:ui",
-    "build:ui": "ng build ui",
+    "build:lib": "run-s build:ui pack:ui",
+    "build:ui": "npm run copy:readme && ng build ui",
     "pack:ui": "cd dist/ui && npm pack",
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
+    "copy:readme": "copyfiles ./README.md ./dist/ui",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -21,7 +23,10 @@
     }
   },
   "lint-staged": {
-  "projects/**/*.ts": [ "prettier --write", "git add" ]
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -56,6 +61,7 @@
     "@types/node": "~8.9.4",
     "babel-loader": "^8.0.6",
     "codelyzer": "~4.5.0",
+    "copyfiles": "^2.1.1",
     "css-loader": "^3.2.0",
     "cypress": "^3.4.1",
     "husky": "^3.0.5",
