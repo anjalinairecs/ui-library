@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { UiComponent } from './ui.component';
+import { UiComponent } from './smoke-test/ui.component';
 import { ButtonComponent } from './button/button.component';
 
 @NgModule({

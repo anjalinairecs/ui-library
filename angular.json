@@ -4,32 +4,32 @@
   "newProjectRoot": "projects",
   "projects": {
     "ui": {
-      "root": "projects/ui",
-      "sourceRoot": "projects/ui/src",
+      "root": "projects/ui-library",
+      "sourceRoot": "projects/ui-library/src",
       "projectType": "library",
       "prefix": "hsbc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ui/tsconfig.lib.json",
-            "project": "projects/ui/ng-package.json"
+            "tsConfig": "projects/ui-library/tsconfig.lib.json",
+            "project": "projects/ui-library/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ui/src/test.ts",
-            "tsConfig": "projects/ui/tsconfig.spec.json",
-            "karmaConfig": "projects/ui/karma.conf.js"
+            "main": "projects/ui-library/src/test.ts",
+            "tsConfig": "projects/ui-library/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-library/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ui/tsconfig.lib.json",
-              "projects/ui/tsconfig.spec.json"
+              "projects/ui-library/tsconfig.lib.json",
+              "projects/ui-library/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
