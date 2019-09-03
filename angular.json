@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ui": {
+    "ui-library": {
       "root": "projects/ui-library",
       "sourceRoot": "projects/ui-library/src",
       "projectType": "library",
@@ -39,5 +39,5 @@
       }
     }
   },
-  "defaultProject": "ui"
+  "defaultProject": "ui-library"
 }

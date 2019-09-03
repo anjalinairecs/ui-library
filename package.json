@@ -9,27 +9,13 @@
     "test:lib-coverage": "ng test ui --code-coverage --watch=false",
     "lint": "ng lint",
     "build:lib": "run-s build:ui pack:ui",
-    "build:ui": "npm run copy:readme && ng build ui",
+    "build:ui": "npm run copy:readme && ng build ui-library",
     "pack:ui": "cd dist/ui && npm pack",
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "copy:readme": "copyfiles ./README.md ./dist/ui",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "projects/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [ "@commitlint/config-conventional" ]
   },
   "private": true,
   "dependencies": {
@@ -56,10 +42,14 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@commitlint/prompt": "^8.1.0",
+    "@storybook/addon-a11y": "^5.1.11",
     "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-centered": "^5.1.11",
+    "@storybook/addon-knobs": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addon-notes": "^5.1.11",
     "@storybook/addon-storysource": "^5.1.11",
+    "@storybook/addon-viewport": "^5.1.11",
     "@storybook/addons": "^5.1.11",
     "@storybook/angular": "^5.1.11",
     "@types/jasmine": "~2.8.8",
@@ -88,5 +78,26 @@
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
   }
 }
