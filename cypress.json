@@ -1,1 +1,21 @@
-{}
+{
+    "integrationFolder": "cypress_tests/integration/examples",
+    "fixturesFolder": "cypress_tests/fixtures",
+    "reporter": "junit",
+    "reporterOptions": {
+      "mochaFile": "tests/test-output-[hash].xml",
+      "toConsole": true,
+      "attachments": true
+    },
+    "video": true,
+    "pluginsFile": "cypress_tests/plugins/index.js",
+    "supportFile": "cypress_tests/plugins/index.js",
+    "screenshotsFolder": "screenshots",
+    "videosFolder": "videos",
+    "env": {
+      "foo": "bar",
+      "some": "value"
+    },
+    "chromeWebSecurity": true,
+    "trashAssetsBeforeRuns": true
+  }
